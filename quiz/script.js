@@ -155,11 +155,33 @@ loadQuestion();
 
 function displayResult() {
   const quizContainer = document.getElementById("quiz-container");
-  quizContainer.innerHTML = "";
+  quizContainer.innerHTML = ""; // Clear previous content
 
-  const ResultContainer = document.getElementById("result-message");
-  quizContainer.innerHTML = "<h2>We have submitted your Response.</h2><h2>Here is your result.</h2>";
+  // Display result message
+  const resultMessage = document.getElementById("quiz-container");
+  resultMessage.innerHTML=
+    "<h2>We have submitted your response.<span>Here is your result.</span></h2>";
 
-  const ScoreContainer = document.getElementById("score");
-  quizContainer.innerHTML = `<h2>${rightAnswer}/10</h2>`;
+  // Display score
+  const scoreElement = document.createElement("h2");
+  scoreElement.textContent = `${rightAnswer}/${quizData.length}`;
+  scoreElement.style.color =
+    rightAnswer <= quizData.length / 3
+      ? "#ab0306"
+      : rightAnswer >= quizData.length / 3 && rightAnswer <= quizData.length / 2
+      ? "#FFD700"
+      : "#0ba312";
+  quizContainer.appendChild(scoreElement);
+
+  // Display emoji based on score
+  const emojiElement = document.createElement("img");
+  emojiElement.style.width = "132px";
+  emojiElement.style.height = "132px";
+  emojiElement.src =
+    rightAnswer <= quizData.length / 3
+      ? "Emojis/Confounded-face.png"
+      : rightAnswer >= quizData.length / 3 && rightAnswer <= quizData.length / 2
+      ? "Emojis/Confused-face.png"
+      : "Emojis/Happy-face.png";
+  quizContainer.appendChild(emojiElement);
 }

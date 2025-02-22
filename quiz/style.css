@@ -55,16 +55,18 @@ body {
     transform: scale(0.95);
 }
 
-.result-message h2 {
-    font-size: 48px;
-    margin-bottom: 3%;
-    text-align: center;
-    color: #ffffff;
-}
-.score h2 {
-    margin-top: 5%;
+h1 h2{
+    font-weight: 200;
+    margin: 15px;
     font-size: 56px;
-    margin-bottom: 3%;
     text-align: center;
-    color: #ffffff;
+}
+h2{
+    margin: 2%;
+    font-size: 64px;
+    text-align: center;
+}
+
+span{
+    display: block;
 }
