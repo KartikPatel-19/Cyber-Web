@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Jersey+15&family=Jersey+10&family=Joan&display=swap');
+
+body {
+    font-family:"Jersey 10", serif;
+    font-weight: 400;
+    font-style: normal;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
+}
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 80vw;
+    height: 50vh;
+}
+.question {
+    font-size: 56px;
+    width: 100%;
+    margin-bottom: 3%;
+    text-align: center;
+    color: #ffffff;
+}
+.option {
+    background-color: rgba(51, 51, 51, 0.8);
+    font-size: 32px;
+    width: 80%;
+    padding: 15px 25px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.option.correct {
+    background-color: rgba(76, 175, 80, 0.8); 
+}
+.option.wrong {
+    background-color: rgba(244, 67, 54, 0.8);
+}
+
+.option:hover {
+    transform: scale(1.05);
+}
+
+.option:active {
+    transform: scale(0.95);
+}
+
+.result-message h2 {
+    font-size: 48px;
+    margin-bottom: 3%;
+    text-align: center;
+    color: #ffffff;
+}
+.score h2 {
+    margin-top: 5%;
+    font-size: 56px;
+    margin-bottom: 3%;
+    text-align: center;
+    color: #ffffff;
+}

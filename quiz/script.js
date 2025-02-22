@@ -1,96 +1,117 @@
 const quizData = [
   {
-    question: "What does the acronym 'HTTP' stand for in web development?",
+    question:
+      "What is the most common type of cyberattack targeting individuals?",
     options: [
-      "HyperText Transmission Protocol",
-      "HyperText Technical Protocol",
-      "HyperText Transfer Protocol",
-      "Hyper Transfer Text Protocol",
+      "Phishing",
+      "Ransomware",
+      "DDoS (Distributed Denial of Service)",
+      "Malware",
     ],
-    correct: "HyperText Transfer Protocol",
-  },
-  {
-    question: "Who is known as the 'father of modern computing'?",
-    options: [
-      "Charles Babbage",
-      "Alan Turing",
-      "John von Neumann",
-      "Bill Gates",
-    ],
-    correct: "Charles Babbage",
-  },
-  {
-    question: "In computer science, what does 'API' stand for?",
-    options: [
-      "Application Programming Interface",
-      "Automated Programming Interface",
-      "Advanced Programming Integration",
-      "Application Performance Indicator",
-    ],
-    correct: "Application Programming Interface",
+    correct: "Phishing",
   },
   {
     question:
-      "Which programming language is primarily used for developing Android mobile applications?",
-    options: ["Java", "C++", "Swift", "Python"],
-    correct: "Java",
+      "What does 'phishing' refer to in the context of cybersecurity?",
+    options: [
+      "Using fake websites to steal personal information",
+      "Tracking online activity for marketing purposes",
+      "Sending fake emails to trick people into giving sensitive information",
+      "Hacking into Wi-Fi networks to steal data",
+    ],
+    correct:
+      "Sending fake emails to trick people into giving sensitive information",
+  },
+  {
+    question: "Which of the following is a strong password practice?",
+    options: [
+      "Using your pet's name and birth year",
+      "Creating a long password with a mix of letters, numbers, and symbols",
+      "Reusing the same password for every account",
+      "Writing your password down in a notebook for easy access",
+    ],
+    correct:
+      "Creating a long password with a mix of letters, numbers, and symbols",
   },
   {
     question:
-      "What is the primary function of the ALU (Arithmetic Logic Unit) in a CPU?",
+      "What should you do if you receive an email asking for personal information from an unfamiliar source?",
     options: [
-      "To manage input and output devices",
-      "To perform arithmetic and logical operations",
-      "To control the clock speed of the CPU",
-      "To store data temporarily",
+      "Respond with the requested information",
+      "Open any links or attachments in the email",
+      "Mark the email as spam and delete it",
+      "Forward the email to your friends to warn them",
     ],
-    correct: "To perform arithmetic and logical operations",
-  },
-  {
-    question: "Which of the following is a type of non-volatile memory?",
-    options: ["RAM", "Cache memory", "Hard Disk Drive (HDD)", "Register"],
-    correct: "Hard Disk Drive (HDD)",
-  },
-  {
-    question: "What is the full form of the term 'GPU' in computing?",
-    options: [
-      "General Processing Unit",
-      "Graphics Processing Unit",
-      "Global Processing Unit",
-      "General Purpose Unit",
-    ],
-    correct: "Graphics Processing Unit",
+    correct: "Mark the email as spam and delete it",
   },
   {
     question:
-      "Which of these is a key feature of the 5th generation of computers?",
+      "How often should you update your passwords for online accounts?",
     options: [
-      "Vacuum tubes",
-      "Artificial Intelligence",
-      "Punch cards",
-      "Magnetic tapes",
+      "Every 1-2 years",
+      "Every month",
+      "Only when you forget your password",
+      "Every 3-6 months",
     ],
-    correct: "Artificial Intelligence",
+    correct: "Every 3-6 months",
+  },
+  {
+    question: "Which of these is a sign that a website may not be secure?",
+    options: [
+      "The website uses 'https://' instead of 'http://'",
+      "There is a padlock symbol in the browser's address bar",
+      "The website asks for personal information without any explanation",
+      "The website has a green color scheme",
+    ],
+    correct:
+      "The website asks for personal information without any explanation",
   },
   {
     question:
-      "In electrical engineering, what is the unit of electrical resistance?",
-    options: ["Ampere", "Volt", "Ohm", "Watt"],
-    correct: "Ohm",
+      "What should you do if you suspect that your computer has been infected with malware?",
+    options: [
+      "Ignore it and continue working",
+      "Disconnect from the internet and run an antivirus scan",
+      "Try to remove the malware manually",
+      "Share the infection with others to warn them",
+    ],
+    correct: "Disconnect from the internet and run an antivirus scan",
+  },
+  {
+    question: "Why is it important to use two-factor authentication (2FA)?",
+    options: [
+      "It makes your accounts look more professional",
+      "It helps to protect your account even if your password is compromised",
+      "It makes it easier to share your accounts with friends",
+      "It speeds up the login process",
+    ],
+    correct:
+      "It helps to protect your account even if your password is compromised",
+  },
+  {
+    question: "What is a 'secure' Wi-Fi network?",
+    options: [
+      "Using fake websites to steal personal information",
+      "Tracking online activity for marketing purposes",
+      "Sending fake emails to trick people into giving sensitive information",
+      "Hacking into Wi-Fi networks to steal data",
+    ],
+    correct: "Hacking into Wi-Fi networks to steal data",
   },
   {
     question:
-      "Which of the following network topologies connects all devices to a central hub?",
+      "What is the best way to protect your personal information when using public Wi-Fi?",
     options: [
-      "Star topology",
-      "Ring topology",
-      "Bus topology",
-      "Mesh topology",
+      "Share your personal information freely, since its usually safe",
+      "Use a Virtual Private Network (VPN) to encrypt your connection",
+      "Avoid logging into any accounts while using public Wi-Fi",
+      "Both B and C",
     ],
-    correct: "Star topology",
+    correct: "Both B and C",
   },
 ];
 let currentQuestionIndex = 0;
+let rightAnswer = 0;
 
 function loadQuestion() {
   const quizContainer = document.getElementById("quiz-container");
@@ -116,6 +137,7 @@ function loadQuestion() {
 function checkAnswer(optionElement, correctAnswer) {
   if (optionElement.textContent === correctAnswer) {
     optionElement.classList.add("correct");
+    rightAnswer+=1;
   } else {
     optionElement.classList.add("wrong");
   }
@@ -124,9 +146,20 @@ function checkAnswer(optionElement, correctAnswer) {
     if (currentQuestionIndex < quizData.length) {
       loadQuestion();
     } else {
-      alert("Quiz completed!");
+      displayResult();
     }
   }, 1000);
 }
 
 loadQuestion();
+
+function displayResult() {
+  const quizContainer = document.getElementById("quiz-container");
+  quizContainer.innerHTML = "";
+
+  const ResultContainer = document.getElementById("result-message");
+  quizContainer.innerHTML = "<h2>We have submitted your Response.</h2><h2>Here is your result.</h2>";
+
+  const ScoreContainer = document.getElementById("score");
+  quizContainer.innerHTML = `<h2>${rightAnswer}/10</h2>`;
+}
