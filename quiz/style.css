@@ -70,3 +70,12 @@ h2{
 span{
     display: block;
 }
+
+#back{
+    position: absolute;
+    display: none;
+    bottom: 5%;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+}

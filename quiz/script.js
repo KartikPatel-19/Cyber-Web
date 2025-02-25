@@ -155,14 +155,12 @@ loadQuestion();
 
 function displayResult() {
   const quizContainer = document.getElementById("quiz-container");
-  quizContainer.innerHTML = ""; // Clear previous content
+  quizContainer.innerHTML = "";
 
-  // Display result message
   const resultMessage = document.getElementById("quiz-container");
   resultMessage.innerHTML=
     "<h2>We have submitted your response.<span>Here is your result.</span></h2>";
 
-  // Display score
   const scoreElement = document.createElement("h2");
   scoreElement.textContent = `${rightAnswer}/${quizData.length}`;
   scoreElement.style.color =
@@ -173,7 +171,6 @@ function displayResult() {
       : "#0ba312";
   quizContainer.appendChild(scoreElement);
 
-  // Display emoji based on score
   const emojiElement = document.createElement("img");
   emojiElement.style.width = "132px";
   emojiElement.style.height = "132px";
@@ -184,4 +181,6 @@ function displayResult() {
       ? "Emojis/Confused-face.png"
       : "Emojis/Happy-face.png";
   quizContainer.appendChild(emojiElement);
+
+  document.getElementById("back").style.display = "block";
 }
