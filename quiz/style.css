@@ -4,6 +4,7 @@ body {
     font-family:"Jersey 10", serif;
     font-weight: 400;
     font-style: normal;
+    flex-flow: column;
     word-spacing: 2px;
     letter-spacing: 2px;
     display: flex;
@@ -78,4 +79,27 @@ span{
     font-size: 14px;
     color: #ffffff;
     text-decoration: none;
+}
+
+.progress-bar {
+    width: 10%;
+    height: 10px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+#progress-bar{
+    height: 5px;
+    width: 20vw;
+    border: none;
+    background-color: rgb(63, 62, 62);
+    border-radius: 16px;
+    margin-bottom: 50px;
+}
+#progress{
+    height: 100%;
+    width: 0%;
+    border: none;
+    background-color: aquamarine;
+    border-radius: 16px;
 }

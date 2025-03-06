@@ -9,10 +9,10 @@ const quizData = [
       "Malware",
     ],
     correct: "Phishing",
+    type: "easy",
   },
   {
-    question:
-      "What does 'phishing' refer to in the context of cybersecurity?",
+    question: "What does 'phishing' refer to in the context of cybersecurity?",
     options: [
       "Using fake websites to steal personal information",
       "Tracking online activity for marketing purposes",
@@ -21,6 +21,7 @@ const quizData = [
     ],
     correct:
       "Sending fake emails to trick people into giving sensitive information",
+    type: "medium",
   },
   {
     question: "Which of the following is a strong password practice?",
@@ -32,6 +33,7 @@ const quizData = [
     ],
     correct:
       "Creating a long password with a mix of letters, numbers, and symbols",
+    type: "easy",
   },
   {
     question:
@@ -43,10 +45,10 @@ const quizData = [
       "Forward the email to your friends to warn them",
     ],
     correct: "Mark the email as spam and delete it",
+    type: "hard",
   },
   {
-    question:
-      "How often should you update your passwords for online accounts?",
+    question: "How often should you update your passwords for online accounts?",
     options: [
       "Every 1-2 years",
       "Every month",
@@ -54,6 +56,7 @@ const quizData = [
       "Every 3-6 months",
     ],
     correct: "Every 3-6 months",
+    type: "medium",
   },
   {
     question: "Which of these is a sign that a website may not be secure?",
@@ -65,6 +68,7 @@ const quizData = [
     ],
     correct:
       "The website asks for personal information without any explanation",
+    type: "hard",
   },
   {
     question:
@@ -76,6 +80,7 @@ const quizData = [
       "Share the infection with others to warn them",
     ],
     correct: "Disconnect from the internet and run an antivirus scan",
+    type: "easy",
   },
   {
     question: "Why is it important to use two-factor authentication (2FA)?",
@@ -87,6 +92,7 @@ const quizData = [
     ],
     correct:
       "It helps to protect your account even if your password is compromised",
+    type: "medium",
   },
   {
     question: "What is a 'secure' Wi-Fi network?",
@@ -97,6 +103,7 @@ const quizData = [
       "Hacking into Wi-Fi networks to steal data",
     ],
     correct: "Hacking into Wi-Fi networks to steal data",
+    type: "easy",
   },
   {
     question:
@@ -108,6 +115,7 @@ const quizData = [
       "Both B and C",
     ],
     correct: "Both B and C",
+    type: "hard",
   },
 ];
 let currentQuestionIndex = 0;
@@ -149,6 +157,11 @@ function checkAnswer(optionElement, correctAnswer) {
       displayResult();
     }
   }, 1000);
+
+  let x = (currentQuestionIndex+1)*10;
+  console.log(x);
+  
+  document.getElementById("progress").style.width = `${x}%`;
 }
 
 loadQuestion();
@@ -156,6 +169,9 @@ loadQuestion();
 function displayResult() {
   const quizContainer = document.getElementById("quiz-container");
   quizContainer.innerHTML = "";
+  
+  const progressContainer = document.getElementById("progress-bar");
+  progressContainer.style.display = "none";
 
   const resultMessage = document.getElementById("quiz-container");
   resultMessage.innerHTML=
@@ -184,3 +200,4 @@ function displayResult() {
 
   document.getElementById("back").style.display = "block";
 }
+
