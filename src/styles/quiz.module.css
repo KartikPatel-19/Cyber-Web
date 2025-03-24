@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Jersey+15&family=Jersey+10&family=Joan&display=swap');
 
-body {
+.main {
     font-family:"Jersey 10", serif;
     font-weight: 400;
     font-style: normal;
@@ -11,9 +11,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #121212;
     color: #ffffff;
 }
+
 .quiz-container {
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ body {
     align-items: center;
     padding: 20px;
     width: 80vw;
-    height: 50vh;
+    min-height: 50vh;
 }
 .question {
     font-size: 56px;
@@ -73,9 +73,6 @@ span{
 }
 
 #back{
-    position: absolute;
-    display: none;
-    bottom: 5%;
     font-size: 14px;
     color: #ffffff;
     text-decoration: none;
