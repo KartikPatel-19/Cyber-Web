@@ -3,10 +3,3 @@ html, body {
     scroll-behavior: smooth;
     background-color: #090909;
 }
-
-footer{
-    background-color: rgb(35, 35, 35);
-    text-align: center;
-    color: azure;
-    padding: 1.5rem 0;
-}

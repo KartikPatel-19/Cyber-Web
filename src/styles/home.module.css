@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Jersey+15&family=Jersey+10&family=Joan&display=swap');
 
+*{
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
 .section{
     border: 1px solid azure;
 }
@@ -34,7 +39,7 @@
 
 .main-question{
     text-align: center;
-    margin-top: 20%;
+    margin-top: 22%;
     color: rgb(255, 255, 255);
 }
 
@@ -45,12 +50,12 @@
   text-shadow: 2px 2px 20px rgba(185, 184, 184, 0.301);
   letter-spacing: 2px;
   font-family: "Joan", serif;
-  font-weight: 400;
   font-style: normal;
 }
 
 .question span{
-    font-weight: 500;
+    font-weight: 600;
+    display: inline;
 }
 
 .btn {
@@ -58,7 +63,7 @@
     border-radius: 10px;
     background-color: rgba(83, 81, 81, 0.5);
     color: rgba(255, 255, 255, 0.7);
-    padding: 8px 20px;
+    padding: 8px 30px;
     margin-top: 20px;
     margin-left: 20px;
     font-size: 18px;
@@ -136,13 +141,14 @@
     align-items: center;
 }
 .message{
-    padding: 25px;
+    padding: 30px;
     color: rgb(255, 255, 255);
-    height: 94vh;
+    height: 92vh;
     align-items: center;
 }
 .message-video h2{
-    margin-top: auto;
+    margin-top: 24%;
+    margin-left: 0;
     text-align: center;
     font-size: 46px;
     height: 460px;
@@ -174,13 +180,16 @@
 .quiz-message h2{
     text-align: center;
     font-size: 68px;
-    height: 24vh;
+    height: 20vh;
     width:80vw;
     font-family: "Jersey 20", serif;
     font-weight: 500;
     font-style: normal;
     word-spacing: 3px;
     letter-spacing: 4px;
+}
+.quiz-message span{
+    display: inline;
 }
 
 .btn-quiz {
@@ -209,3 +218,9 @@
     transform: scale(0.95);
 }
 
+footer{
+    background-color: rgb(35, 35, 35);
+    text-align: center;
+    color: azure;
+    padding: 0.8rem 0;
+}

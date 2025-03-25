@@ -25,12 +25,12 @@ function Quiz() {
 
     return (
         <main className={styles["main"]}>
-            <div className={styles["progress-bar"]} id={styles["progress-bar"]}>
-                <div className={styles["progress"]} id={styles["progress"]} style={{ width: `${(currIdx + 1) * 10}%` }}></div>
-            </div>
             <div className={styles["quiz-container"]} id={styles["quiz-container"]}>
                 {currIdx < questions.length ?
                     <>
+                        <div className={styles["progress-bar"]} id={styles["progress-bar"]}>
+                            <div className={styles["progress"]} id={styles["progress"]} style={{ width: `${(currIdx) * 10}%` }}></div>
+                        </div>
                         <div className={styles["question"]}>{questions[currIdx].question}</div>
                         {questions[currIdx].options.map((option, idx) =>
                             <Option handler={(valid) => {
