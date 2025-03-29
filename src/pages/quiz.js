@@ -6,9 +6,12 @@ import Happy from "../images/happy.png"
 import Confused from "../images/confused.png"
 import Sad from "../images/confounded.png"
 
+import { getAvgScore, insertScore } from "../db"
+
 function Quiz() {
     const [currIdx, setCurrIdx] = useState(0)
     const [right, setRight] = useState(0)
+    const [avg, setAvg] = useState(undefined)
 
     let resColor, resEmoji;
     if (right <= questions.length / 3) {
@@ -35,7 +38,15 @@ function Quiz() {
                         {questions[currIdx].options.map((option, idx) =>
                             <Option handler={(valid) => {
                                 setRight(right + valid)
-                                setTimeout(() => { setCurrIdx(currIdx + 1) }, 1000)
+                                setTimeout(() => {
+                                    if (currIdx + 1 === questions.length)
+                                        insertScore(right).then(() => 
+                                            getAvgScore().then(avg => {
+                                                setAvg(avg)
+                                                setCurrIdx(currIdx + 1)
+                                            })
+                                        )
+                                }, 1000)
                             }} key={idx} option={option} correct={questions[currIdx].correct} />
                         )}
                     </> :
@@ -43,6 +54,7 @@ function Quiz() {
                         <h2>We have submitted your response.<span>Here is your result.</span></h2>
                         <h2 style={{ color: resColor }}>{right} / {questions.length}</h2>
                         <img src={resEmoji} width="132" height="132" alt="Emoji" />
+                        <h2 style={{ marginTop: 50 }}>World Average: {avg === undefined ? "" : avg}</h2>
                     </>
                 }
             </div>
