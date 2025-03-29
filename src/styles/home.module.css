@@ -224,3 +224,93 @@ footer{
     color: azure;
     padding: 0.8rem 0;
 }
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.carousel {
+    display: flex;
+    gap: 30px; /* Increased gap for better spacing */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scroll-behavior: smooth; /* Smooth scrolling for tile transitions */
+    transition: transform 0.3s ease-in-out; /* Smooth animation for tile changes */
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+    }
+
+    .carousel-item {
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px; /* Slightly larger border radius */
+        padding: 30px; /* Increased padding for larger content area */
+        text-align: center;
+        color: white;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 300px; /* Increased width for larger tiles */
+        height: 400px; /* Increased height for larger tiles */
+    }
+
+    .carousel-item h3 {
+        font-size: 28px; /* Slightly larger font size */
+        font-family: "Jersey 20", serif;
+        margin-bottom: 15px;
+    }
+
+    .carousel-item p {
+        font-size: 18px; /* Slightly larger font size */
+        font-family: "Joan", serif;
+        line-height: 1.6;
+    }
+
+    .carousel-item:hover {
+        transform: scale(1.1); /* Slightly larger scale on hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 14px 40px rgba(0, 0, 0, 0.35); /* Enhanced shadow on hover */
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 32px; /* Increased font size for better visibility */
+        cursor: pointer;
+        padding: 16px; /* Increased padding for larger clickable area */
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added subtle shadow for depth */
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .carousel-btn:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        transform: scale(1.2); /* Slightly larger scale on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    }
+
+    .carousel-btn:active {
+        transform: scale(0.95); /* Slightly reduced scale on click */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+    }
+
+    .carousel-btn:first-of-type {
+        left: 20px; /* Adjusted for larger buttons */
+    }
+
+    .carousel-btn:last-of-type {
+        right: 20px; /* Adjusted for larger buttons */
+    }

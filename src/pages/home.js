@@ -16,7 +16,34 @@ function Home() {
                 </div>
             </section>
 
-            <section className={`${styles["section-2"]} ${styles["section"]} ${styles["scroll-section"]}`} id="Info"></section>
+            <section className={`${styles["section-2"]} ${styles["section"]} ${styles["scroll-section"]}`} id="Info">
+                <div className={styles["carousel-container"]}>
+                    <button className={styles["carousel-btn"]} onClick={() => scrollCarousel(-1)}>&lt;</button>
+                    <div className={styles["carousel"]} id="carousel">
+                        <div className={styles["carousel-item"]}>
+                            <h3>Tile 1</h3>
+                            <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.</p>
+                        </div>
+                        <div className={styles["carousel-item"]}>
+                            <h3>Tile 2</h3>
+                            <p>Phishing attacks are one of the most common methods used by attackers to steal sensitive information.</p>
+                        </div>
+                        <div className={styles["carousel-item"]}>
+                            <h3>Tile 3</h3>
+                            <p>Always use strong and unique passwords for your accounts to enhance security.</p>
+                        </div>
+                        <div className={styles["carousel-item"]}>
+                            <h3>Tile 4</h3>
+                            <p>Two-factor authentication adds an extra layer of security to your online accounts.</p>
+                        </div>
+                        <div className={styles["carousel-item"]}>
+                            <h3>Tile 5</h3>
+                            <p>Regularly updating your software helps protect against known vulnerabilities.</p>
+                        </div>
+                    </div>
+                    <button className={styles["carousel-btn"]} onClick={() => scrollCarousel(1)}>&gt;</button>
+                </div>
+            </section>
 
             <section className={`${styles["section-3"]} ${styles["section"]} ${styles["scroll-section"]}`}>
                 <div className={`${styles["message"]} ${styles["message-video"]}`}>
@@ -38,10 +65,16 @@ function Home() {
             <section className={`${styles["section-6"]} ${styles["section"]} ${styles["scroll-section"]}`}></section>
 
             <footer>
-				&copy; {new Date().getFullYear()} Team No 13 (Kartik Patel - 24BRS1383 &amp; V Srivatsan - 24BRS1381). All Rights Reserved.
-			</footer>
+                &copy; {new Date().getFullYear()} Team No 13 (Kartik Patel - 24BRS1383 &amp; V Srivatsan - 24BRS1381). All Rights Reserved.
+            </footer>
         </main>
-    )
+    );
+
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById("carousel");
+        const scrollAmount = carousel.offsetWidth;
+        carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    }
 }
 
 export default Home
