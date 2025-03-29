@@ -288,29 +288,26 @@ footer{
         background-color: rgba(255, 255, 255, 0.2);
         border: none;
         color: white;
-        font-size: 32px; /* Increased font size for better visibility */
+        font-size: 28px; /* Slightly larger button size */
         cursor: pointer;
-        padding: 16px; /* Increased padding for larger clickable area */
+        padding: 12px;
         border-radius: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added subtle shadow for depth */
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .carousel-btn:hover {
         background-color: rgba(255, 255, 255, 0.4);
         transform: scale(1.2); /* Slightly larger scale on hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
     }
 
     .carousel-btn:active {
-        transform: scale(0.95); /* Slightly reduced scale on click */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+        transform: scale(0.9);
     }
 
     .carousel-btn:first-of-type {
-        left: 20px; /* Adjusted for larger buttons */
+        left: 15px; /* Adjusted for larger buttons */
     }
 
     .carousel-btn:last-of-type {
-        right: 20px; /* Adjusted for larger buttons */
+        right: 15px; /* Adjusted for larger buttons */
     }

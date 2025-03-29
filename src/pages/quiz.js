@@ -46,6 +46,8 @@ function Quiz() {
                                                 setCurrIdx(currIdx + 1)
                                             })
                                         )
+
+                                    else setCurrIdx(currIdx + 1)
                                 }, 1000)
                             }} key={idx} option={option} correct={questions[currIdx].correct} />
                         )}
