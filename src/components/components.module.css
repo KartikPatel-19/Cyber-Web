@@ -1,0 +1,93 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.carousel-container {
+    width: 75%; max-width: 75%;
+    display: flex; justify-content: center;
+}
+
+.carousel-item {
+    position: absolute;
+    transform: scale(0);
+    filter: blur(2px);
+    background-color: #222222;
+    border-radius: 20px; /* Slightly larger border radius */
+    padding: 30px; /* Increased padding for larger content area */
+    text-align: center;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 400px;
+}
+
+.carousel-item h3 {
+    font-size: 28px; /* Slightly larger font size */
+    font-family: "Jersey 20", serif;
+    margin-bottom: 15px;
+}
+
+.carousel-item p {
+    font-size: 18px; /* Slightly larger font size */
+    font-family: "Joan", serif;
+    line-height: 1.6;
+}
+
+.carousel-item.carousel-left {
+    position: static;
+    min-width: 30%;
+    transform: scale(0.9) translateX(10%);
+    z-index: 1;
+}
+
+.carousel-item.carousel-center {
+    position: static;
+    min-width: 30%;
+    filter: none;
+    transform: scale(1.1);
+    background-color: #222222;
+    z-index: 2;
+}
+
+.carousel-item.carousel-right {
+    position: static;
+    min-width: 30%;
+    transform: scale(0.9) translateX(-10%);
+    z-index: 1;
+}
+
+.carousel-btn {
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 28px;
+    /* Slightly larger button size */
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.2);
+    /* Slightly larger scale on hover */
+}
+
+.carousel-btn:active {
+    transform: scale(0.9);
+}
+
+.carousel-btn:first-of-type {
+    left: 15px;
+    /* Adjusted for larger buttons */
+}
+
+.carousel-btn:last-of-type {
+    right: 15px;
+    /* Adjusted for larger buttons */
+}

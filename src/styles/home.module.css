@@ -1,16 +1,15 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Jersey+15&family=Jersey+10&family=Joan&display=swap');
 
-*{
+* {
     margin: 0;
     scroll-behavior: smooth;
 }
 
-.section{
+.section {
     border: 1px solid azure;
 }
 
-.section-1{
+.section-1 {
     position: relative;
     height: 100vh;
     background-image: url("../images/Background.png");
@@ -21,39 +20,41 @@
 .section-1::before {
     content: '';
     position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-.section-1 button, .section-1 h1 {
+
+.section-1 button,
+.section-1 h1 {
     position: relative;
     z-index: 2;
 }
 
-.section-1 span{
+.section-1 span {
     font-weight: bolder;
 }
 
-.main-question{
+.main-question {
     text-align: center;
     margin-top: 22%;
     color: rgb(255, 255, 255);
 }
 
-.question{
-  font-size: 48px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.659);
-  text-shadow: 2px 2px 20px rgba(185, 184, 184, 0.301);
-  letter-spacing: 2px;
-  font-family: "Joan", serif;
-  font-style: normal;
+.question {
+    font-size: 48px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.659);
+    text-shadow: 2px 2px 20px rgba(185, 184, 184, 0.301);
+    letter-spacing: 2px;
+    font-family: "Joan", serif;
+    font-style: normal;
 }
 
-.question span{
+.question span {
     font-weight: 600;
     display: inline;
 }
@@ -123,36 +124,39 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
 .scroll-section {
-  height: 100vh;
-  scroll-snap-align: start;
+    height: 100vh;
+    scroll-snap-align: start;
 }
 
-.message-video{
+.message-video {
     display: flex;
     padding: 25px;
     color: rgb(255, 255, 255);
     height: 94vh;
     align-items: center;
 }
-.message{
+
+.message {
     padding: 30px;
     color: rgb(255, 255, 255);
     height: 92vh;
     align-items: center;
 }
-.message-video h2{
+
+.message-video h2 {
     margin-top: 24%;
     margin-left: 0;
     text-align: center;
     font-size: 46px;
     height: 460px;
-    width:460px;
+    width: 460px;
     font-family: "Jersey 20", serif;
     font-weight: 500;
     font-style: normal;
@@ -170,25 +174,26 @@
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4), 0 12px 40px rgba(255, 255, 255, 0.38);
 }
 
-.quiz-message{
+.quiz-message {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
 }
 
-.quiz-message h2{
+.quiz-message h2 {
     text-align: center;
     font-size: 68px;
     height: 20vh;
-    width:80vw;
+    width: 80vw;
     font-family: "Jersey 20", serif;
     font-weight: 500;
     font-style: normal;
     word-spacing: 3px;
     letter-spacing: 4px;
 }
-.quiz-message span{
+
+.quiz-message span {
     display: inline;
 }
 
@@ -218,96 +223,10 @@
     transform: scale(0.95);
 }
 
-footer{
+
+footer {
     background-color: rgb(35, 35, 35);
     text-align: center;
     color: azure;
     padding: 0.8rem 0;
 }
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-}
-
-.carousel {
-    display: flex;
-    gap: 30px; /* Increased gap for better spacing */
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    scroll-behavior: smooth; /* Smooth scrolling for tile transitions */
-    transition: transform 0.3s ease-in-out; /* Smooth animation for tile changes */
-    }
-
-    .carousel::-webkit-scrollbar {
-        display: none; /* For Chrome, Safari, and Opera */
-    }
-
-    .carousel-item {
-        flex: 0 0 auto;
-        scroll-snap-align: center;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 20px; /* Slightly larger border radius */
-        padding: 30px; /* Increased padding for larger content area */
-        text-align: center;
-        color: white;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        width: 300px; /* Increased width for larger tiles */
-        height: 400px; /* Increased height for larger tiles */
-    }
-
-    .carousel-item h3 {
-        font-size: 28px; /* Slightly larger font size */
-        font-family: "Jersey 20", serif;
-        margin-bottom: 15px;
-    }
-
-    .carousel-item p {
-        font-size: 18px; /* Slightly larger font size */
-        font-family: "Joan", serif;
-        line-height: 1.6;
-    }
-
-    .carousel-item:hover {
-        transform: scale(1.1); /* Slightly larger scale on hover */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 14px 40px rgba(0, 0, 0, 0.35); /* Enhanced shadow on hover */
-    }
-
-    .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(255, 255, 255, 0.2);
-        border: none;
-        color: white;
-        font-size: 28px; /* Slightly larger button size */
-        cursor: pointer;
-        padding: 12px;
-        border-radius: 50%;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .carousel-btn:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-        transform: scale(1.2); /* Slightly larger scale on hover */
-    }
-
-    .carousel-btn:active {
-        transform: scale(0.9);
-    }
-
-    .carousel-btn:first-of-type {
-        left: 15px; /* Adjusted for larger buttons */
-    }
-
-    .carousel-btn:last-of-type {
-        right: 15px; /* Adjusted for larger buttons */
-    }
