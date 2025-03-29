@@ -65,8 +65,11 @@ function Home() {
             <section className={`${styles["section-6"]} ${styles["section"]} ${styles["scroll-section"]}`}></section>
 
             <footer>
-                &copy; {new Date().getFullYear()} Team No 13 (Kartik Patel - 24BRS1383 &amp; V Srivatsan - 24BRS1381). All Rights Reserved.
-            </footer>
+                &copy; {new Date().getFullYear()} Team No 13 (
+                Kartik Patel - 24BRS1383 &amp; &nbsp;
+                <a style={{ color: 'white' }} href="https://srivatsan.vercel.app" target="_blank" rel="noopener noreferrer">V Srivatsan - 24BRS1381</a>
+                ). All Rights Reserved.
+			</footer>
         </main>
     );
 
