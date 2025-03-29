@@ -56,12 +56,19 @@ function Quiz() {
                         <h2>We have submitted your response.<span>Here is your result.</span></h2>
                         <h2 style={{ color: resColor }}>{right} / {questions.length}</h2>
                         <img src={resEmoji} width="132" height="132" alt="Emoji" />
-                        <h2 style={{ marginTop: 50 }}>World Average: {avg === undefined ? "" : avg}</h2>
+                        <h2 style={{ marginTop: 50 }}>World Average: {avg === undefined ? "" : avg.toFixed(2)}</h2>
                     </>
                 }
             </div>
             {currIdx < questions.length ? <></> :
-                <Link to="/" id={styles["back"]}>Back to Home</Link>
+                <div>
+                    <Link to="/" id={styles["back"]}>Back to Home</Link>
+                    <Link onClick={() => {
+                        setCurrIdx(0);
+                        setRight(0);
+                        setAvg(undefined);
+                    }} id={styles["reset"]}>Reset Quiz</Link>
+                </div>
             }
         </main>
     )
@@ -193,12 +200,12 @@ const questions = [
     {
         question: "What is a 'secure' Wi-Fi network?",
         options: [
-            "Using fake websites to steal personal information",
-            "Tracking online activity for marketing purposes",
-            "Sending fake emails to trick people into giving sensitive information",
-            "Hacking into Wi-Fi networks to steal data",
+            "A network with no password protection",
+            "A network that broadcasts its name publicly",
+            "A network using WPA2/WPA3 encryption",
+            "A network using default factory settings",
         ],
-        correct: "Hacking into Wi-Fi networks to steal data",
+        correct: "A network using WPA2/WPA3 encryption",
         type: "easy",
     },
     {
