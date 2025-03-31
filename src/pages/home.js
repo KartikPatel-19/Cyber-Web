@@ -21,24 +21,81 @@ function Home() {
             <section className={`${styles["section-2"]} ${styles["section"]} ${styles["scroll-section"]}`} id="Info">
                 <Carousel info={[
                     {
-                        title: 'Title 1',
-                        content: 'Hello world!'
+                        title: 'Phishing Awareness',
+                        subtitle: 'Recognize the Threat',
+                        content: 'Phishing remains the most common attack vector, responsible for 41% of all incidents. Learn to identify suspicious emails, links, and attachments to protect yourself and your organization.',
+                        subtitle2:'Types to Watch For',
+                        content2a:'* Domain spoofing: Attackers impersonating legitimate companies',
+                        content2b:'* HTTPS phishing: Malicious websites appearing secure',
+                        content2c:'* Spear phishing: Targeted attacks using personalized information',
+                        subtitle3: 'Protection Tips',
+                        content3: 'Use phishing simulations to test and reinforce your ability to spot both general phishing attempts and sophisticated targeted attacks.'
                     },
                     {
-                        title: 'Title 2',
-                        content: 'Hello world!'
+                        title: 'Password Security',
+                        subtitle: 'Create Strong Passwords',
+                        content: 'Weak passwords are an easy entry point for cybercriminals. Use unique passwords with a combination of uppercase and lowercase letters, numbers, and symbols.',
+                        subtitle2:'Best Practices',
+                        content2a:'* Ban password reuse across different accounts',
+                        content2b:'* Use a password manager to create and store complex passwords',
+                        content2c:'* Change passwords regularly according to a schedule',
+                        subtitle3: 'Avoid Common Mistakes',
+                        content3: 'Never share passwords through documents, email, or text messages, and don`t write them down where others can find them.'
                     },
                     {
-                        title: 'Title 3',
-                        content: 'Hello world!'
+                        title: 'Ransomware Protection',
+                        subtitle: 'What is Ransomware?',
+                        content: 'Ransomware is malicious software that encrypts files until a ransom is paid. It has evolved to include extracting and threatening to expose sensitive information.',
+                        subtitle2:'Prevention Steps',
+                        content2a:'* Keep all software and systems updated',
+                        content2b:'* Install malware protection and anti-spam software',
+                        content2c:'* Be cautious of suspicious attachments and links',
+                        subtitle3: 'Response Plan',
+                        content3: 'Develop an incident response plan that includes isolating affected systems, reporting to authorities, and having a recovery strategy in place.'
                     },
                     {
-                        title: 'Title 4',
-                        content: 'Hello world!'
+                        title: 'Mobile Device Security',
+                        subtitle: 'Protect Your Mobile Devices',
+                        content: 'Mobile devices often contain sensitive personal and corporate information that needs protection.',
+                        subtitle2:'Security Measures',
+                        content2a:'* Manage app permissions carefully',
+                        content2b:'* Only install apps from trusted sources',
+                        content2c:'* Use device encryption',
+                        subtitle3: 'App Security',
+                        content3: 'Review the permissions requested by apps and limit access to only what`s necessary for functionality.'
                     },
                     {
-                        title: 'Title 5',
-                        content: 'Hello world!'
+                        title: 'Multi-Factor Authentication',
+                        subtitle: 'Beyond Passwords',
+                        content: 'Multi-factor authentication requires multiple pieces of evidence to verify identity:',
+                        subtitle2:'',
+                        content2a:'* Something you know (password/PIN)',
+                        content2b:'* Something you have (smartphone/token)',
+                        content2c:'* Something you are (biometrics)',
+                        subtitle3: 'Implementation Benefits',
+                        content3: 'Even if passwords are compromised, MFA provides an additional layer of security that significantly reduces the risk of unauthorized access.'
+                    },
+                    {
+                        title: 'Safe Internet Browsing',
+                        subtitle: 'Browse Securely',
+                        content: 'Secure browsing means protecting your personal and sensitive information while using the internet.',
+                        subtitle2:'Best Practices',
+                        content2a:'* Use browsers with built-in security features',
+                        content2b:'* Install ad-blockers and anti-tracking extensions',
+                        content2c:'* Verify website security (look for HTTPS)',
+                        subtitle3: 'Recognize Warning Signs',
+                        content3: 'Learn to identify suspicious websites, misleading URLs, and potential scam indicators before clicking.'
+                    },
+                    {
+                        title: 'Data Protection',
+                        subtitle: 'Safeguard Your Information',
+                        content: 'Data security involves protecting digital information from unauthorized access, corruption, or theft.',
+                        subtitle2:'Protection Strategies',
+                        content2a:'* Classify data based on sensitivity',
+                        content2b:'* Use encryption for sensitive information',
+                        content2c:'* Regularly back up important data',
+                        subtitle3: 'Data Handling Guidelines',
+                        content3: 'Follow proper procedures for storing, sharing, and disposing of sensitive information to prevent data breaches.'
                     },
                 ]} />
             </section>

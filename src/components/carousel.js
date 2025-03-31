@@ -16,7 +16,16 @@ const Carousel = (props) => {
                         index === currIdx+1 ? styles["carousel-right"] : ""
                     )} key={index}>
                         <h3>{item.title}</h3>
+                        <h4>{item.subtitle}</h4>
                         <p>{item.content}</p>
+                        <h4>{item.subtitle2}</h4>
+                        <div>
+                            <p>{item.content2a}</p>
+                            <p>{item.content2b}</p>
+                            <p>{item.content2c}</p>
+                        </div>
+                        <h4>{item.subtitle3}</h4>
+                        <p>{item.content3}</p>
                     </div>
                 ))}
             </div>

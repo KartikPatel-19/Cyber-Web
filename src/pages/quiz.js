@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 
 import styles from '../styles/quiz.module.css'
 import Happy from "../images/happy.png"
@@ -12,6 +12,7 @@ function Quiz() {
     const [currIdx, setCurrIdx] = useState(0)
     const [right, setRight] = useState(0)
     const [avg, setAvg] = useState(undefined)
+    const navigate = useNavigate()
 
     let resColor, resEmoji;
     if (right <= questions.length / 3) {
@@ -40,7 +41,7 @@ function Quiz() {
                                 setRight(right + valid)
                                 setTimeout(() => {
                                     if (currIdx + 1 === questions.length)
-                                        insertScore(right).then(() => 
+                                        insertScore(right+1).then(() => 
                                             getAvgScore().then(avg => {
                                                 setAvg(avg)
                                                 setCurrIdx(currIdx + 1)
@@ -62,12 +63,15 @@ function Quiz() {
             </div>
             {currIdx < questions.length ? <></> :
                 <div>
-                    <Link to="/" id={styles["back"]}>Back to Home</Link>
-                    <Link onClick={() => {
+                    <button onClick={(e)=> {
+                        e.preventDefault()
+                        navigate(-1)
+                        }} id={styles["back"]}>Back to Home</button>
+                    <button onClick={() => {
                         setCurrIdx(0);
                         setRight(0);
                         setAvg(undefined);
-                    }} id={styles["reset"]}>Reset Quiz</Link>
+                    }} id={styles["reset"]}>Reset Quiz</button>
                 </div>
             }
         </main>

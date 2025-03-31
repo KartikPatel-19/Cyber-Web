@@ -30,14 +30,33 @@
     margin-bottom: 15px;
 }
 
-.carousel-item p {
+.carousel-item h4 {
     font-size: 18px; /* Slightly larger font size */
+    font-family: "Jersey 20", serif;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.carousel-item>p {
+    font-size: 14px; /* Slightly larger font size */
     font-family: "Joan", serif;
     line-height: 1.6;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.carousel-item>div>p {
+    font-size: 14px; /* Slightly larger font size */
+    font-family: "Joan", serif;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 8px;
+    margin-left: 20px;
 }
 
 .carousel-item.carousel-left {
-    position: static; opacity: 1;
+    position: static; 
+    opacity: 1;
     min-width: 30%;
     transform: scale(0.9) translateX(10%);
     z-index: 1;
