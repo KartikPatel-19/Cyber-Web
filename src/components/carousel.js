@@ -19,11 +19,11 @@ const Carousel = (props) => {
                         <h4>{item.subtitle}</h4>
                         <p>{item.content}</p>
                         <h4>{item.subtitle2}</h4>
-                        <div>
-                            <p>{item.content2a}</p>
-                            <p>{item.content2b}</p>
-                            <p>{item.content2c}</p>
-                        </div>
+                        <ul>
+                            <li>{item.content2a}</li>
+                            <li>{item.content2b}</li>
+                            <li>{item.content2c}</li>
+                        </ul>
                         <h4>{item.subtitle3}</h4>
                         <p>{item.content3}</p>
                     </div>

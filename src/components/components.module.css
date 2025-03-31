@@ -11,6 +11,8 @@
 }
 
 .carousel-item {
+    overflow-y: overlay;
+    width: 25%; max-width: 25%;
     position: absolute;
     opacity: 0; transform: scale(0) translateX(-100%);
     filter: blur(2px);
@@ -38,20 +40,21 @@
     margin-top: 15px;
 }
 
+.carousel-item ul li {
+    text-align: left;
+    font-size: 14px; /* Slightly larger font size */
+    font-family: "Joan", serif;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
 .carousel-item>p {
     font-size: 14px; /* Slightly larger font size */
     font-family: "Joan", serif;
     line-height: 1.6;
     text-align: left;
     margin-bottom: 15px;
-}
-.carousel-item>div>p {
-    font-size: 14px; /* Slightly larger font size */
-    font-family: "Joan", serif;
-    line-height: 1.6;
-    text-align: left;
-    margin-bottom: 8px;
-    margin-left: 20px;
 }
 
 .carousel-item.carousel-left {
@@ -109,4 +112,26 @@
 .carousel-btn:last-of-type {
     right: 15px;
     /* Adjusted for larger buttons */
+}
+
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #333333; /* Dark background for the track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555555; /* Slightly lighter thumb */
+    border-radius: 10px;
+    border: 2px solid #222222; /* Matches the carousel background */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777777; /* Lighter thumb on hover */
 }
