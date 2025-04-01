@@ -19,6 +19,7 @@ function Home() {
             </section>
 
             <section className={`${styles["section-2"]} ${styles["section"]} ${styles["scroll-section"]}`} id="Info">
+                <h2 style={{ color: 'white', marginBottom: '10vh' }}>Common Cyber Attacks</h2>
                 <Carousel info={[
                     {
                         title: 'Phishing Awareness',
