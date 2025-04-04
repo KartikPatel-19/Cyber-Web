@@ -10,7 +10,7 @@ import Earth from "../images/earth.png"
 import { getAvgScore, insertScore } from "../db"
 
 function Quiz() {
-    const [currIdx, setCurrIdx] = useState(9)
+    const [currIdx, setCurrIdx] = useState(0)
     const [right, setRight] = useState(0)
     const [avg, setAvg] = useState(undefined)
     const navigate = useNavigate()
@@ -42,17 +42,12 @@ function Quiz() {
                                 setRight(right + valid)
                                 setTimeout(() => {
                                     if (currIdx + 1 === questions.length)
-                                        getAvgScore().then(avg => {
+                                        insertScore(right+1).then(() => 
+                                            getAvgScore().then(avg => {
                                                 setAvg(avg)
                                                 setCurrIdx(currIdx + 1)
                                             })
-                                        // insertScore(right+1).then(() => 
-                                        //     getAvgScore().then(avg => {
-                                        //         setAvg(avg)
-                                        //         setCurrIdx(currIdx + 1)
-                                        //     })
-                                        // )
-
+                                        )
                                     else setCurrIdx(currIdx + 1)
                                 }, 1000)
                             }} key={idx} option={option} correct={questions[currIdx].correct} />
