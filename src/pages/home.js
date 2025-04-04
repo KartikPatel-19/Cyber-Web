@@ -19,7 +19,7 @@ function Home() {
             </section>
 
             <section className={`${styles["section-2"]} ${styles["section"]} ${styles["scroll-section"]}`} id="Info">
-                <h2 style={{ color: 'white', marginBottom: '10vh' }}>Common Cyber Attacks</h2>
+                <h2 style={{ color: 'white', marginTop: '10vh', marginBottom: '10vh'}}>Common Cyber Attacks &amp; Prevention</h2>
                 <Carousel info={[
                     {
                         title: 'Phishing Awareness',
@@ -122,7 +122,8 @@ function Home() {
 
             <footer>
                 &copy; {new Date().getFullYear()} Team No 13 (
-                Kartik Patel - 24BRS1383 &amp; &nbsp;
+                <a style={{ color: 'white' }} href="https://github.com/KartikPatel-19" target="_blank" rel="noopener noreferrer">Kartik Patel - 24BRS1383</a>
+                 &nbsp; &amp; &nbsp;
                 <a style={{ color: 'white' }} href="https://srivatsan.vercel.app" target="_blank" rel="noopener noreferrer">V Srivatsan - 24BRS1381</a>
                 ). All Rights Reserved.
 			</footer>

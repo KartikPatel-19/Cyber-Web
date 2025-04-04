@@ -120,3 +120,7 @@ span{
     background-color: aquamarine;
     border-radius: 16px;
 }
+#back:hover, #reset:hover{
+    color: rgb(65, 151, 211);
+    text-shadow: 0px 0px 8px rgb(65, 151, 211),0px 0px 16px rgb(65, 151, 211),0px 0px 32px rgb(65, 151, 211) ;
+}

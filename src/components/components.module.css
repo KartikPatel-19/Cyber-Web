@@ -17,23 +17,23 @@
     opacity: 0; transform: scale(0) translateX(-100%);
     filter: blur(2px);
     background-color: #222222;
-    border-radius: 20px; /* Slightly larger border radius */
-    padding: 30px; /* Increased padding for larger content area */
+    border-radius: 20px;
+    padding: 30px;
     text-align: center;
     color: white;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     height: 400px;
 }
 
 .carousel-item h3 {
-    font-size: 28px; /* Slightly larger font size */
+    font-size: 28px;
     font-family: "Jersey 20", serif;
     margin-bottom: 15px;
 }
 
 .carousel-item h4 {
-    font-size: 18px; /* Slightly larger font size */
+    font-size: 18px;
     font-family: "Jersey 20", serif;
     margin-bottom: 15px;
     text-align: left;
@@ -42,7 +42,7 @@
 
 .carousel-item ul li {
     text-align: left;
-    font-size: 14px; /* Slightly larger font size */
+    font-size: 14px;
     font-family: "Joan", serif;
     line-height: 1.6;
     text-align: left;
@@ -50,7 +50,7 @@
 }
 
 .carousel-item>p {
-    font-size: 14px; /* Slightly larger font size */
+    font-size: 14px;
     font-family: "Joan", serif;
     line-height: 1.6;
     text-align: left;
@@ -87,7 +87,6 @@
     border: none;
     color: white;
     font-size: 28px;
-    /* Slightly larger button size */
     cursor: pointer;
     padding: 12px;
     border-radius: 50%;
@@ -97,7 +96,6 @@
 .carousel-btn:hover {
     background-color: rgba(255, 255, 255, 0.4);
     transform: scale(1.2);
-    /* Slightly larger scale on hover */
 }
 
 .carousel-btn:active {
@@ -106,32 +104,29 @@
 
 .carousel-btn:first-of-type {
     left: 15px;
-    /* Adjusted for larger buttons */
 }
 
 .carousel-btn:last-of-type {
     right: 15px;
-    /* Adjusted for larger buttons */
 }
 
 
-/* Custom scrollbar styling */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #333333; /* Dark background for the track */
+    background: #333333;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #555555; /* Slightly lighter thumb */
+    background: #555555;
     border-radius: 10px;
-    border: 2px solid #222222; /* Matches the carousel background */
+    border: 2px solid #222222;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #777777; /* Lighter thumb on hover */
+    background: #777777;
 }

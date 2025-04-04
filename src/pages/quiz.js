@@ -5,11 +5,12 @@ import styles from '../styles/quiz.module.css'
 import Happy from "../images/happy.png"
 import Confused from "../images/confused.png"
 import Sad from "../images/confounded.png"
+import Earth from "../images/earth.png"
 
 import { getAvgScore, insertScore } from "../db"
 
 function Quiz() {
-    const [currIdx, setCurrIdx] = useState(0)
+    const [currIdx, setCurrIdx] = useState(9)
     const [right, setRight] = useState(0)
     const [avg, setAvg] = useState(undefined)
     const navigate = useNavigate()
@@ -41,12 +42,16 @@ function Quiz() {
                                 setRight(right + valid)
                                 setTimeout(() => {
                                     if (currIdx + 1 === questions.length)
-                                        insertScore(right+1).then(() => 
-                                            getAvgScore().then(avg => {
+                                        getAvgScore().then(avg => {
                                                 setAvg(avg)
                                                 setCurrIdx(currIdx + 1)
                                             })
-                                        )
+                                        // insertScore(right+1).then(() => 
+                                        //     getAvgScore().then(avg => {
+                                        //         setAvg(avg)
+                                        //         setCurrIdx(currIdx + 1)
+                                        //     })
+                                        // )
 
                                     else setCurrIdx(currIdx + 1)
                                 }, 1000)
@@ -57,12 +62,16 @@ function Quiz() {
                         <h2>We have submitted your response.<span>Here is your result.</span></h2>
                         <h2 style={{ color: resColor }}>{right} / {questions.length}</h2>
                         <img src={resEmoji} width="132" height="132" alt="Emoji" />
-                        <h2 style={{ marginTop: 50 }}>World Average: {avg === undefined ? "" : avg.toFixed(2)}</h2>
+                        <div style={{display: 'flex', alignItems: 'center', marginTop: '20px', marginBottom: '10px'}}>
+                            <img src={Earth} width="64" height="64" alt="earth" />
+                            <h2 style={{width: '43vw', fontSize: '72px'}}>World Average: {avg === undefined ? "" : avg.toFixed(2)}</h2>
+                        </div>
+                        
                     </>
                 }
-            </div>
+            </div >
             {currIdx < questions.length ? <></> :
-                <div>
+                <div className={styles["buttons"]}>
                     <button onClick={(e)=> {
                         e.preventDefault()
                         navigate(-1)
